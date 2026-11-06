@@ -1,0 +1,14 @@
+{
+  "ConfigMultiplierDescription": "昼間の加速移動で使用する移動倍率。ゲーム原本は 1.5 です。",
+  "CommandDescription": "昼間の加速移動時の加速倍率を調整します",
+  "ArgumentDescription": "新しい加速倍率、または reset",
+  "ArgumentHint": "<{0}–{1} | reset>",
+  "UsageArguments": "[倍率|reset]",
+  "UsageHeader": "加速倍率",
+  "UsageLine": "現在 {0}、設定範囲 {1}–{2}。",
+  "SetSuccess": "加速倍率を {0} に設定しました。",
+  "ResetSuccess": "加速倍率を {0} に戻しました。",
+  "InvalidMultiplier": "無効な加速倍率「{0}」です。{1}–{2} または reset を入力してください。",
+  "ConfigSaveFailed": "加速倍率を保存できませんでした。BepInEx/config ディレクトリの書き込み権限を確認してください。",
+  "UnsupportedGameVersion": "ゲームバージョン {0} はサポート対象外です。加速倍率は {1} でのみ使用できます。"
+}

@@ -1,0 +1,14 @@
+{
+  "ConfigMultiplierDescription": "Movement multiplier used during daytime speed-up. The original game value is 1.5.",
+  "CommandDescription": "Adjust the daytime speed-up multiplier",
+  "ArgumentDescription": "New speed-up multiplier, or reset",
+  "ArgumentHint": "<{0}–{1} | reset>",
+  "UsageArguments": "[multiplier|reset]",
+  "UsageHeader": "Speed-up Multiplier",
+  "UsageLine": "Current: {0}; allowed range: {1}–{2}.",
+  "SetSuccess": "Speed-up multiplier set to {0}.",
+  "ResetSuccess": "Speed-up multiplier restored to {0}.",
+  "InvalidMultiplier": "Invalid speed-up multiplier \"{0}\". Enter {1}–{2}, or reset.",
+  "ConfigSaveFailed": "Could not save the speed-up multiplier. Check write access to the BepInEx/config directory.",
+  "UnsupportedGameVersion": "Game version {0} is not supported. The speed-up multiplier requires {1}."
+}

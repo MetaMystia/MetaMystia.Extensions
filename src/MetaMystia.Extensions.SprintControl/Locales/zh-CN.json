@@ -1,0 +1,14 @@
+{
+  "ConfigMultiplierDescription": "白天加速走时使用的移动倍率。游戏原版为 1.5。",
+  "CommandDescription": "调整白天加速走时的加速倍率",
+  "ArgumentDescription": "新的加速倍率，或 reset",
+  "ArgumentHint": "<{0}–{1} | reset>",
+  "UsageArguments": "[倍率|reset]",
+  "UsageHeader": "加速倍率",
+  "UsageLine": "当前 {0}；允许范围 {1}–{2}。",
+  "SetSuccess": "加速倍率已设为 {0}。",
+  "ResetSuccess": "加速倍率已恢复为 {0}。",
+  "InvalidMultiplier": "无效加速倍率“{0}”。请输入 {1}–{2}，或 reset。",
+  "ConfigSaveFailed": "无法保存加速倍率，请检查 BepInEx/config 目录的写入权限。",
+  "UnsupportedGameVersion": "当前游戏版本 {0} 不受支持；加速倍率仅适用于 {1}。"
+}

@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>MetaMystia.Extensions.SprintControl</AssemblyName>
+    <RootNamespace>MetaMystia.Extensions.SprintControl</RootNamespace>
+    <Version>1.0.0</Version>
+    <OutputPath Condition="'$(DeployToGame)' != 'false' and '$(Configuration)' == 'Release'">$(BepInExPath)/plugins</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <RequiresMetaMystia>true</RequiresMetaMystia>
+    <RequiresMetaMystiaNetwork>true</RequiresMetaMystiaNetwork>
+    <ExtensionModule>true</ExtensionModule>
+    <ExtensionModuleId>SprintControl</ExtensionModuleId>
+    <EmbeddedAssemblyName>MetaMystia.Extensions.AddonKit</EmbeddedAssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../MetaMystia.Extensions.AddonKit/MetaMystia.Extensions.AddonKit.csproj"
+                      Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.PluginInfoProps">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.Unity.IL2CPP">
+      <IncludeAssets>compile</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Costura.Fody">
+      <PrivateAssets>all</PrivateAssets>
+      <Private>False</Private>
+    </PackageReference>
+    <PackageReference Include="Fody">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.CommandLine">
+      <IncludeAssets>compile</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(BepInExPath)/interop/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(BepInExPath)/interop/Il2Cppmscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MetaMystia">
+      <HintPath>$(MetaMystiaAssemblyPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MetaMystia.Network">
+      <HintPath>$(MetaMystiaNetworkAssemblyPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(BepInExPath)/interop/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Locales/*.json" />
+  </ItemGroup>
+
+</Project>
