@@ -1,0 +1,6 @@
+{
+  "MissingDependencyTitle": "缺少前置插件，安装后请重启游戏",
+  "MissingDependencyMessage": "{0} 需要 {1} {2} 或更高版本。",
+  "Dismiss": "关闭提示",
+  "ProjectLinkDescription": "MetaMystia.Extensions GitHub 仓库"
+}

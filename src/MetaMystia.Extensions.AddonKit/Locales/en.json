@@ -1,0 +1,6 @@
+{
+  "MissingDependencyTitle": "Missing required mod. Install it and restart the game.",
+  "MissingDependencyMessage": "{0} requires {1} {2} or newer.",
+  "Dismiss": "Dismiss",
+  "ProjectLinkDescription": "MetaMystia.Extensions GitHub repository"
+}

@@ -1,0 +1,6 @@
+{
+  "MissingDependencyTitle": "必須 MOD がありません。インストール後にゲームを再起動してください。",
+  "MissingDependencyMessage": "{0} には {1} {2} 以降が必要です。",
+  "Dismiss": "閉じる",
+  "ProjectLinkDescription": "MetaMystia.Extensions GitHubリポジトリ"
+}

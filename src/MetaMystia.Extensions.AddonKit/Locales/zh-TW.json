@@ -1,0 +1,6 @@
+{
+  "MissingDependencyTitle": "缺少前置外掛，安裝後請重新啟動遊戲",
+  "MissingDependencyMessage": "{0} 需要 {1} {2} 或更新版本。",
+  "Dismiss": "關閉提示",
+  "ProjectLinkDescription": "MetaMystia.Extensions GitHub 儲存庫"
+}
