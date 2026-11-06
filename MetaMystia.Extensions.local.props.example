@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <BepInExPath>path/to/Touhou Mystia Izakaya/BepInEx</BepInExPath>
+    <MetaMystiaAssemblyPath>$(BepInExPath)/plugins/MetaMystia-v0.29.5.dll</MetaMystiaAssemblyPath>
+    <MetaMystiaNetworkAssemblyPath>path/to/MetaMystia/src/MetaMystia.Network/bin/Release/net6.0/MetaMystia.Network.dll</MetaMystiaNetworkAssemblyPath>
+  </PropertyGroup>
+</Project>

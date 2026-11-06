@@ -1,0 +1,38 @@
+{
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		"MetaMystia.Extensions.sln": "*.props, *.targets, NuGet.config, .editorconfig, .gitattributes, .gitignore, build.ps1",
+		"README*": "*.md, LICENSE",
+		"*.csproj": "FodyWeavers.xml, FodyWeavers.xsd, packages.lock.json"
+	},
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"cSpell.words": [
+		"AddonKit",
+		"Behaviour",
+		"BepInEx",
+		"buildtransitive",
+		"Chainloader",
+		"contentfiles",
+		"Costura",
+		"Cppmscorlib",
+		"firstpass",
+		"Fody",
+		"HarmonyLib",
+		"IMGUI",
+		"Izakaya",
+		"LASTEXITCODE",
+		"Mathf",
+		"Mystia",
+		"NuGetAudit",
+		"Pannel",
+		"pdbs",
+		"SemanticVersioning",
+		"SprintControl",
+		"steamapps",
+		"Touhou",
+		"xunit"
+	]
+}

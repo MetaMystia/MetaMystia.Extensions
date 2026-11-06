@@ -1,0 +1,16 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)MetaMystia.Extensions.local.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)MetaMystia.Extensions.local.props')" />
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>14</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Deterministic>true</Deterministic>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NuGetAudit>false</NuGetAudit>
+    <!-- BepInEx 6 beta references a withdrawn Cpp2IL version; NuGet resolves an available published package. -->
+    <NoWarn>$(NoWarn);NU1603</NoWarn>
+  </PropertyGroup>
+</Project>

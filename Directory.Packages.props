@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="BepInEx.PluginInfoProps" Version="2.1.0" />
+    <PackageVersion Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.788" />
+    <PackageVersion Include="Costura.Fody" Version="6.0.0" />
+    <PackageVersion Include="Fody" Version="6.9.3" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    <PackageVersion Include="xunit" Version="2.9.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+</Project>

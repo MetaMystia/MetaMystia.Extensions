@@ -1,0 +1,51 @@
+<Project>
+  <Target Name="ValidateMetaMystiaReferences"
+          BeforeTargets="BeforeBuild"
+          Condition="'$(RequiresMetaMystia)' == 'true'">
+    <Error Condition="'$(BepInExPath)' == ''"
+           Text="BepInExPath is required. Configure MetaMystia.Extensions.local.props." />
+    <Error Condition="!Exists('$(BepInExPath)/interop/Assembly-CSharp.dll')"
+           Text="Game interop not found under BepInExPath: $(BepInExPath)" />
+    <Error Condition="!Exists('$(MetaMystiaAssemblyPath)')"
+           Text="MetaMystia assembly not found: $(MetaMystiaAssemblyPath). Configure MetaMystia.Extensions.local.props." />
+    <Error Condition="'$(RequiresMetaMystiaNetwork)' == 'true' and !Exists('$(MetaMystiaNetworkAssemblyPath)')"
+           Text="MetaMystia.Network assembly not found: $(MetaMystiaNetworkAssemblyPath). Build it once or configure the path." />
+  </Target>
+
+  <Target Name="FinalizeExtensionModule"
+          AfterTargets="Build"
+          Condition="'$(ExtensionModule)' == 'true'">
+    <PropertyGroup>
+      <VersionedTargetPath>$(TargetDir)$(TargetName)-v$(Version)$(TargetExt)</VersionedTargetPath>
+      <VersionedPdbPath>$(TargetDir)$(TargetName)-v$(Version).pdb</VersionedPdbPath>
+      <ModulePdbPath>$(TargetDir)$(TargetName).pdb</ModulePdbPath>
+      <ModuleArtifactDir>$(RepoRoot)artifacts/$(Configuration)/$(ExtensionModuleId)/</ModuleArtifactDir>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(DeployToGame)' != 'false'">
+      <PreviousModuleFile Include="$(TargetDir)$(TargetName)-v*$(TargetExt)"
+                          Exclude="$(VersionedTargetPath)" />
+      <PreviousModuleSymbols Include="$(TargetDir)$(TargetName)-v*.pdb"
+                             Exclude="$(VersionedPdbPath)" />
+    </ItemGroup>
+
+    <Delete Files="@(PreviousModuleFile);@(PreviousModuleSymbols)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(VersionedTargetPath)" />
+    <Copy SourceFiles="$(ModulePdbPath)"
+          DestinationFiles="$(VersionedPdbPath)"
+          Condition="('$(Configuration)' != 'Release' or '$(DeployToGame)' == 'false') and Exists('$(ModulePdbPath)')" />
+    <Delete Files="$(TargetPath);$(ModulePdbPath)" />
+    <Delete Files="$(TargetDir)$(TargetName).deps.json"
+            Condition="'$(Configuration)' == 'Release' and '$(DeployToGame)' != 'false'" />
+    <Delete Files="$(VersionedPdbPath);$(TargetDir)$(EmbeddedAssemblyName).pdb"
+            Condition="'$(Configuration)' == 'Release' and '$(DeployToGame)' != 'false'" />
+    <Error Condition="'$(Configuration)' == 'Release' and Exists('$(TargetDir)$(EmbeddedAssemblyName).dll')"
+           Text="Costura did not embed $(EmbeddedAssemblyName).dll into $(TargetName)." />
+
+    <RemoveDir Directories="$(ModuleArtifactDir)" Condition="'$(DeployToGame)' == 'false'" />
+    <MakeDir Directories="$(ModuleArtifactDir)" Condition="'$(DeployToGame)' == 'false'" />
+    <Copy SourceFiles="$(VersionedTargetPath)"
+          DestinationFiles="$(ModuleArtifactDir)$(TargetName)-v$(Version)$(TargetExt)"
+          Condition="'$(DeployToGame)' == 'false'" />
+  </Target>
+</Project>
